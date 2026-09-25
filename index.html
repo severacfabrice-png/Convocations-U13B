@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convocation U13-B — Blagnac FC</title>
+<style>
+:root{--b:#06459b;--l:#e9edf9}*{box-sizing:border-box}
+body{margin:0;background:#f3f5f8;font-family:Arial,sans-serif;color:#20242b}
+main{max-width:850px;margin:auto;padding:16px}.card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 2px 16px #0002;width:100%;overflow:hidden}
+h1{margin:0;color:var(--b);font-size:22px}.hint{color:#68707d;margin:6px 0 18px}
+h2{font-size:17px;margin:18px 0 8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+label{display:flex;align-items:center;gap:9px;border:1px solid #d9dde5;border-radius:9px;padding:10px;min-width:0;cursor:pointer}
+label span:last-child{min-width:0;overflow-wrap:anywhere}
+input{width:22px;height:22px;min-width:22px}.n{color:var(--b);font-weight:bold;min-width:42px}
+button{width:100%;margin-top:20px;padding:15px;border:0;border-radius:10px;background:var(--b);color:#fff;font-size:16px;font-weight:bold;min-height:50px}
+#msg{margin-top:10px;color:#555}
+@media(max-width:620px){
+ body{background:#fff}
+ main{padding:0;max-width:none}
+ .card{border-radius:0;box-shadow:none;padding:14px 12px 28px}
+ h1{font-size:20px;line-height:1.2}
+ .hint{font-size:14px;line-height:1.35}
+ h2{font-size:16px}
+ .grid{grid-template-columns:1fr;gap:8px}
+ label{padding:11px 9px;font-size:15px}
+ label small{font-size:12px;color:#68707d}
+ input{width:24px;height:24px;min-width:24px}
+ button{position:sticky;bottom:8px;z-index:5;font-size:16px;box-shadow:0 3px 12px #0003}
+}
+@media(max-width:360px){
+ .card{padding-left:8px;padding-right:8px}
+ label{gap:6px;font-size:14px}
+ .n{min-width:38px}
+}
+</style>
+</head><body><main><div class="card">
+<h1>Convocation U13-B — Blagnac FC</h1>
+<div class="hint">Sélectionnez jusqu’à 12 joueurs et le ou les responsables présents.</div>
+<h2>Joueurs convoqués — <span id="cnt">0/12</span></h2><div id="players" class="grid"><label><input class="p" type="checkbox" data-i="0"><span class="n">N° 1</span><span><b>MOHAMMAD</b> Bader<br><small>9602765325</small></span></label><label><input class="p" type="checkbox" data-i="1"><span class="n">N° 22</span><span><b>ROSARD</b> Timeo<br><small>9603435274</small></span></label><label><input class="p" type="checkbox" data-i="2"><span class="n">N° 3</span><span><b>BAHLA</b> Sami<br><small>9602867229</small></span></label><label><input class="p" type="checkbox" data-i="3"><span class="n">N° 5</span><span><b>BOURCHAK</b> Abdrahman<br><small>9603147254</small></span></label><label><input class="p" type="checkbox" data-i="4"><span class="n">N° 4</span><span><b>ROUGUI</b> Rayane<br><small>9604337991</small></span></label><label><input class="p" type="checkbox" data-i="5"><span class="n">N° 8</span><span><b>KOURDI</b> Hasan<br><small>9603925446</small></span></label><label><input class="p" type="checkbox" data-i="6"><span class="n">N° 10</span><span><b>LAMTHARI</b> Rayan<br><small>9603159809</small></span></label><label><input class="p" type="checkbox" data-i="7"><span class="n">N° 6</span><span><b>KHOUYI CHERROU</b> Rayan<br><small>9603476187</small></span></label><label><input class="p" type="checkbox" data-i="8"><span class="n">N° 13</span><span><b>LEVALOIS</b> Salif<br><small>9603726316</small></span></label><label><input class="p" type="checkbox" data-i="9"><span class="n">N° 11</span><span><b>PASSOS GOMES</b> Luis<br><small>9604354569</small></span></label><label><input class="p" type="checkbox" data-i="10"><span class="n">N° 12</span><span><b>SEVERAC BERTELLI</b> Louison<br><small>9603436451</small></span></label><label><input class="p" type="checkbox" data-i="11"><span class="n">N° 7</span><span><b>EL ORCH</b> Youenn<br><small>9602926098</small></span></label><label><input class="p" type="checkbox" data-i="12"><span class="n">N° 9</span><span><b>FOUGANI</b> Abdelghani<br><small>9603631413</small></span></label></div>
+<h2>Encadrement présent</h2><div id="staff" class="grid"><label><input class="s" type="checkbox" data-i="0"><span><b>KONAN</b> JEAN LOUIS<br><small>9605350613</small></span></label><label><input class="s" type="checkbox" data-i="1"><span><b>SEVERAC</b> FABRICE<br><small>9605236103</small></span></label></div>
+<button id="pdfBtn">Télécharger le PDF</button>
+<div id="msg"></div>
+<noscript><p style="padding:12px;background:#fff3cd;border-radius:8px">Pour sélectionner les joueurs et générer le PDF, ouvrez ce fichier dans Safari/Chrome. L’aperçu de fichiers du téléphone bloque JavaScript.</p></noscript>
+</div></main>
+
+<!-- jsPDF chargé depuis CDN : aucune installation nécessaire -->
+
+<script>
+const P=[[1,"MOHAMMAD","Bader","9602765325"],[22,"ROSARD","Timeo","9603435274"],[3,"BAHLA","Sami","9602867229"],[5,"BOURCHAK","Abdrahman","9603147254"],[4,"ROUGUI","Rayane","9604337991"],[8,"KOURDI","Hasan","9603925446"],[10,"LAMTHARI","Rayan","9603159809"],[6,"KHOUYI CHERROU","Rayan","9603476187"],[13,"LEVALOIS","Salif","9603726316"],[11,"PASSOS GOMES","Luis","9604354569"],[12,"SEVERAC BERTELLI","Louison","9603436451"],[7,"EL ORCH","Youenn","9602926098"],[9,"FOUGANI","Abdelghani","9603631413"]];
+const S=[["KONAN","JEAN LOUIS","9605350613"],["SEVERAC","FABRICE","9605236103"]];
+function sel(cl,a){return [...document.querySelectorAll("."+cl+":checked")].map(e=>a[+e.dataset.i])}
+document.querySelectorAll(".p").forEach(e=>e.onchange=function(){let n=sel("p",P).length;if(n>12){this.checked=false;alert("Maximum 12 joueurs.");n=12}document.querySelector("#cnt").textContent=n+"/12"});
+
+
+function latin(s){return String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^\x20-\x7E]/g," ")}
+function pdfEscape(s){return latin(s).replace(/\\/g,"\\\\").replace(/\(/g,"\\(").replace(/\)/g,"\\)")}
+function downloadPDF(ps,ss){
+ const pt=72/25.4, pageW=297*pt, pageH=210*pt, ops=[];
+ const C={blue:[.024,.271,.608],light:[.914,.929,.976],head:[.898,.898,.898],grid:[.36,.36,.36],dark:[.30,.32,.38],white:[1,1,1]};
+ const X=x=>x*pt, Y=y=>pageH-y*pt;
+ function fill(c){ops.push(`${c.join(" ")} rg`)} function stroke(c){ops.push(`${c.join(" ")} RG`)}
+ function rect(x,y,w,h,fc,sc,lw=.16){fill(fc);stroke(sc);ops.push(`${X(lw)} w ${X(x)} ${Y(y+h)} ${X(w)} ${X(h)} re B`)}
+ function text(t,x,y,size=6,c=C.dark,align="left",w=0){
+   t=pdfEscape(t); fill(c); ops.push(`BT /F1 ${size} Tf`);
+   let approx=t.length*size*.50/pt, xx=x;
+   if(align==="center") xx=x+(w-approx)/2;
+   ops.push(`${X(xx)} ${Y(y)} Td (${t}) Tj ET`);
+ }
+ function fit(t,x,y,w,h,size=6,c=C.dark){
+   t=latin(t); let s=size; while(s>4.1 && t.length*s*.50/pt>w-1)s-=.15;
+   text(t,x,y+h/2+s*.12,s,c,"center",w)
+ }
+ const L=14,T=8,FW=130;
+ text("EQUIPE 1 :",L,T+4.6,7.2,C.blue);
+ rect(L+16,T,FW-16,7,C.light,[.647,.667,.706],.2); fit("BLAGNAC FC 2",L+16,T,FW-16,7,7.6);
+ let y=T+8.5, widths=[12,9,30,27,29,23], heads=["","CAT","Nom","Prenom","N de licencie","Blessure"],hh=4.6,rh=4.75,x=L;
+ heads.forEach((h,j)=>{rect(x,y,widths[j],hh,C.head,C.grid);fit(h,x,y,widths[j],hh,6);x+=widths[j]}); y+=hh;
+ let rows=ps.slice(0,12); while(rows.length<12)rows.push(null);
+ rows.forEach((p,i)=>{x=L;let v=p?[String(p[0]),"U13",p[1],p[2],p[3],""]:["","","","","",""];
+   v.forEach((q,j)=>{rect(x,y,widths[j],rh,j===0?C.white:C.light,C.grid);fit(q,x,y,widths[j],rh,5.8);x+=widths[j]}); y+=rh});
+ y+=.8; const iw=[25,46,21,38],ih=5.2,st=[ss[0]||null,ss[1]||null];
+ [["Nom Responsable",st[0],"N de licencie"],["Nom Accompagnant",st[1],""]].forEach((r,i)=>{
+   x=L;let vals=[r[0],r[1]?(r[1][0]+" "+r[1][1]):"",r[2],r[1]?r[1][2]:""];
+   vals.forEach((v,j)=>{if(j===1||j===3){rect(x,y,iw[j],ih,C.light,[.659,.69,.765]);fit(v,x,y,iw[j],ih,5.9)}
+     else text(v,x+.5,y+3.6,5.8,C.blue);x+=iw[j]});y+=ih+.5});
+ const stream=ops.join("\n");
+ const objs=[
+  `<< /Type /Catalog /Pages 2 0 R >>`,
+  `<< /Type /Pages /Kids [3 0 R] /Count 1 >>`,
+  `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageW.toFixed(2)} ${pageH.toFixed(2)}] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>`,
+  `<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`,
+  `<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>`
+ ];
+ let pdf="%PDF-1.4\n",offs=[0];
+ objs.forEach((o,i)=>{offs.push(pdf.length);pdf+=`${i+1} 0 obj\n${o}\nendobj\n`});
+ const xr=pdf.length; pdf+=`xref\n0 ${objs.length+1}\n0000000000 65535 f \n`;
+ for(let i=1;i<offs.length;i++)pdf+=String(offs[i]).padStart(10,"0")+" 00000 n \n";
+ pdf+=`trailer\n<< /Size ${objs.length+1} /Root 1 0 R >>\nstartxref\n${xr}\n%%EOF`;
+ const blob=new Blob([pdf],{type:"application/pdf"}),url=URL.createObjectURL(blob);
+ const a=document.createElement("a");a.href=url;a.download="Feuille_match_Blagnac_FC2.pdf";document.body.appendChild(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),3000);
+}
+document.querySelector("#pdfBtn").onclick=function(){
+ const ps=sel("p",P),ss=sel("s",S); if(!ps.length){alert("Selectionnez au moins un joueur.");return}
+ try{downloadPDF(ps,ss);document.querySelector("#msg").textContent="PDF genere. Verifiez vos telechargements."}
+ catch(e){alert("Erreur lors de la generation du PDF : "+e.message)}
+};
+</script></body></html>
