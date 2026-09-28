@@ -1,0 +1,1 @@
+Téléversez les 5 fichiers (index.html, feuille-match.html, statistiques.html, equipe.jpg, logo.png) dans votre dépôt GitHub Pages. Les statistiques sont enregistrées localement dans le navigateur et ne sont pas synchronisées entre appareils.
