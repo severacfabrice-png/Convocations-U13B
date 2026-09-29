@@ -1,1 +1,1 @@
-Téléversez les 5 fichiers (index.html, feuille-match.html, statistiques.html, equipe.jpg, logo.png) dans votre dépôt GitHub Pages. Les statistiques sont enregistrées localement dans le navigateur et ne sont pas synchronisées entre appareils.
+V3 Supabase. Les statistiques sont enregistrées dans la table matchs et synchronisées entre appareils. Les policies SELECT, INSERT, DELETE et UPDATE pour anon doivent être actives.
