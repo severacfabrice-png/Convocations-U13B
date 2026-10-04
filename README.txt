@@ -1,8 +1,7 @@
-V4 : statistiques Supabase
-- Matchs joués, buts marqués, buts encaissés
-- Moyenne de buts marqués et encaissés par match
-- Quantité de buts/passes directement à côté du joueur
-- Modification et suppression d'un match existant
-- Synchronisation Supabase téléphone/PC
-
-Important : la policy UPDATE Supabase doit être active pour modifier un match.
+V7 Présence :
+- historique réparé et rechargé depuis Supabase
+- modification d'une absence existante
+- camembert global des types d'absence
+- clic sur le nom d'un joueur = détail de toutes ses absences
+- logo Blagnac utilisé comme favicon / icône de favori
+La policy UPDATE de la table absences doit être active.
