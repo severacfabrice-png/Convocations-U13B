@@ -1,0 +1,1 @@
+V10 : BENMOKHTAR Ayoub, licence 9603070336, porte le numéro 10 et remplace LAMTHARI Rayan. LAMTHARI est masqué des nouvelles sélections, mais son identifiant reste réservé pour préserver les anciennes statistiques et absences. Aucune modification Supabase nécessaire.
